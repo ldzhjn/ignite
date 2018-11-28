@@ -30,7 +30,7 @@ public class OdbcQueryExecuteResult {
     private final Collection<OdbcColumnMeta> columnsMetadata;
 
     /** Rows affected by the statements. */
-    private final Collection<Long> affectedRows;
+    private final long[] affectedRows;
 
     /**
      * @param queryId Query ID.
@@ -38,7 +38,7 @@ public class OdbcQueryExecuteResult {
      * @param affectedRows Affected rows.
      */
     public OdbcQueryExecuteResult(long queryId, Collection<OdbcColumnMeta> columnsMetadata,
-        Collection<Long> affectedRows) {
+                                  long[] affectedRows) {
         this.queryId = queryId;
         this.columnsMetadata = columnsMetadata;
         this.affectedRows = affectedRows;
@@ -61,7 +61,7 @@ public class OdbcQueryExecuteResult {
     /**
      * @return Number of rows affected by the statements.
      */
-    public Collection<Long> affectedRows() {
+    public long[] affectedRows() {
         return affectedRows;
     }
 }
